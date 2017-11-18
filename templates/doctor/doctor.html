@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+{% block detail %}
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br><br>
+            <div class="row">
+{% for doc in app %}
+
+
+                <div class="col m12">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">{{ doc.lastname }}, {{ doc.name }}</span>
+                            <div class="row">
+                                <div class="col m4">                            <img src="" alt="" width="128" height="128">
+</div>
+                                <div class="col m8">
+                                    <h5>Специализация: {{ doc.specialization }}</h5>
+                                    <h5>Местоположение: {{ doc.location }}</h5>
+                                    <h5>Образование:{{ doc.obraz }}</h5>
+                                    <h5>Стаж работы: {{ doc.stage }} </h5>
+                                    <h5>Номер телефона:&nbsp;+ {{ doc.phone }}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col m3">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">Статистика</span>
+                            <p>Рейтинг<i class="material-icons">grade</i><i class="material-icons">grade</i><i class="material-icons">grade</i><i class="material-icons">grade</i><i class="material-icons">grade</i>
+                            </p>
+                            <p>Кол-во записавшихся</p>
+                        </div>
+
+                    </div>
+                    </div>
+                    <div class="col m9">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">Информация о себе</span>
+                                <p>I am a very simple card. I am good at containing small bits of information.
+                                    I am convenient because I require little markup to use effectively.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+               <div class="col m12">
+               <h3 class="blue-grey-text center">Запись на прием</h3>
+                  <div class="col s12">
+                     <ul class="tabs blue-grey ">
+                        {% for data in extra %}
+                        <li class="tab col s3"><a class="white-text" href="#{{ data.day_data }}">{{ data.day_data }}</a></li>
+                        {% endfor %}
+                     </ul>
+                     {% for timer in time %}
+                     <div id="{{ timer.time_id.day_data }}" class="col s5">
+                        <br>
+                        <br>
+                        <a class="btn blue" href="/appoit/{{ timer.time_id.id }}/{{ appoit.id }}/{{ timer.id }}/">{{ timer.time }}</a>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+
+                </div>
+            </div>
+
+            <br><br>
+
+        </div>
+    </div>
+    </div>
+
+{% endfor %}
+
+
+
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends 'index.html' %}
+
+{% block search %}
+    {% load staticfiles %}
+    <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h3 class="header center white-text text-lighten-2">Запись на прием к врачу</h3>
+          <br>
+          <br>
+          <br><br>
+        <div class="row center">
+          <form  class="col s12" action="/result/">
+            <div class="row">
+              <div class="input-field col s4">
+                  <input type="text" id="autocomplete" class="autocomplete" name="q">
+                <label for="first_name" class="white-text">Специализация</label>
+
+              </div>
+              <div class="input-field col s4">
+                <input id="loc" type="text" class="location" id="location" name="loc">
+                <label for="last_name" class="white-text">Местоположение</label>
+              </div>
+              <button class=" btn btn-large blue-grey">Найти врача</button>
+            </div>
+        </div>
+
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'assets/img/banner.jpg' %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+        <h2 class="blue-grey-text center">Наши сервисы</h2>
+
+      <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="card  cyan darken-1">
+                    <div class="card-content white-text center">
+                        <i class="large material-icons">today</i>
+                        <br>
+                        <span class="card-title ">Запись на прием</span>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="card cyan darken-1">
+                    <div class="card-content white-text center">
+                        <i class="large material-icons">assignment
+                        </i>
+                        <br>
+                        <span class="card-title">Запись на диагностику</span>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="card cyan darken-1">
+                    <div class="card-content white-text center">
+                        <i class="large material-icons">contact_phone
+                        </i>
+                        <br>
+                        <span class="card-title">Телемедицина</span>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Современный сервис записи на прием к врачу</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'assets/img/p5234.jpg' %}" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Приложение</h4>
+            <div class="col m6 s12">
+                <h4 class="cyan-text text-darken-3"><i class="fa fa-android fa-2x"></i>&nbsp;Android</h4>
+            </div>
+            <div class="col m6 s12">
+                <h4 class="cyan-text text-darken-4"><i class="fa fa-apple fa-2x"></i>&nbsp;iphone</h4>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

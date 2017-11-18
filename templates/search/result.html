@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block SearchResult %}
+<div id="index-banner" class="parallax-container">
+   <div class="section no-pad-bot">
+      <div class="container">
+         <br><br>
+         <h3 class="header center blue-grey-text text-lighten-2">Результат поиска по запросу</h3>
+         <div class="row">
+            {% for appoit in app %}
+            <div class="col s12 m12 card blue-grey">
+               <div class="col m6">
+                  <div class="card-content white-text">
+                     <span class="card-title">{{ appoit.name }}, {{ appoit.lastname }}</span>
+                     <div class="col m6">
+                        <img src="" alt="" width="128" height="128">
+                        <br><br>
+                        <p>Образование:{{    appoit.obraz  }}</p>
+                        <p>Местоположение:{{    appoit.location  }}</p>
+                        <p>Стаж работы:{{ appoit.stage }}</p>
+                        <br class="space">
+                        <a class="waves-effect waves-light btn blue" href="/appoit/doctor/{{ appoit.id }}/">Профиль врача</a>
+                        <br class="space">
+                        <br class="space">
+                     </div>
+                     <div class="col m6">
+                        <p>Информация о себе: <i>{{    appoit.about_info  }}</i></p>
+                        <p>
+                           Специализация:
+                           <i>
+                        <div class="chip">
+                        {{    appoit.specialization  }}
+                        </div></i>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col m6">
+                  <div class="col s12">
+                     <ul class="tabs blue-grey ">
+                        {% for data in extra %}
+                        <li class="tab col s3"><a class="white-text" href="#{{ data.day_data }}">{{ data.day_data }}</a></li>
+                        {% endfor %}
+                     </ul>
+                     {% for timer in time %}
+                     <div id="{{ timer.time_id.day_data }}" class="col s5">
+                        <br>
+                        <br>
+                        <a class="btn blue" href="/appoit/{{ timer.time_id.id }}/{{ appoit.id }}/{{ timer.id }}/">{{ timer.time }}</a>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+         <br><br>
+      </div>
+   </div>
+</div>
+{% endblock %}

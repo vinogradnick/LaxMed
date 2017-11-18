@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>LaxMed -Сервис записи на прием к врачу</title>
+{% load staticfiles %}
+  <!-- CSS  -->
+    <link rel="stylesheet" href="{% static 'assets/css/calendar.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'assets/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="{% static 'assets/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://use.fontawesome.com/42846b1a9f.js"></script>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/" class="brand-logo"><img src="{% static 'assets/img/logo.png' %}" alt="" width="230"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Контакты</a></li>
+          <li><a href="#"></a></li>
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  {% block search %}
+  {% endblock %}
+  {% block diagnostic %}
+  
+  {% endblock %}
+  {% block SearchResult %}
+  {% block detail %}
+  
+  {% endblock %}
+      
+  {% endblock %}
+  {% block schedule %}
+  {% endblock %}
+  {% block secret %}
+  {% endblock %}
+{% block complete %}
+  {% endblock %}
+  <footer class="page-footer cyan darken-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">LaxMed</h5>
+          <p class="grey-text text-lighten-4">Онлайн веб-сервис записи на прием к врачу</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Дополнительная информация</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Социальные сети</h5>
+          <ul>
+            <li><a class="white-text" href="#!"><i class="fa fa-vk fa-lg" aria-hidden="true"></i>&nbsp;Вконтакте</a></li>
+              <br>
+            <li><a class="white-text" href="#!"><i class="fa fa-odnoklassniki fa-lg" aria-hidden="true"></i>&nbsp;Одноклассники</a></li>
+              <br>
+            <li><a class="white-text" href="#!"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i>Facebook</a></li>
+              <br>
+              <li><a class="white-text" href="#!"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright darken-3">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">LaxMed@Materialize</a>
+      </div>
+    </div>
+  </footer>
+  <!--  Scripts-->
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        <script src="{% static 'assets/js/materialize.min.js' %}"></script>
+        <script src="{% static 'assets/js/init.js' %}"></script>
+  </body>
+</html>
